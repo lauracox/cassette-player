@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+	background-color: #777666;
+	background-image: url(../img/bg-lines2.png);
+	background-size: cover;
+	overflow: hidden;
+}
+
+#shadow {
+	position: absolute;
+	width: 440px;
+	height: 820px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.15) -10px 10px 45px 25px,
+							rgba(0, 0, 0, 0.08) -10px 15px 20px 15px,
+							rgba(0, 0, 0, 0.3) -5px 10px 3px -1px;
+	transform: rotateX(25deg) scale(0.9) translateY(-80px);
+}
+
+.player-container {
+	width: 450px;
+	height: 860px;
+	font-family: 'Syncopate', sans-serif;
+	transform-style: preserve-3d;
+}
+
+.top {
+	width: 100%;
+	height: 91%;
+	padding: 25px 15px 15px 15px;
+	border-radius: 5px;
+	background-image: url("../img/silver.png");
+	transform: rotateX(25deg) scale(0.88) translateY(-80px) translateZ(0px);
+}
+
+.front {
+	width: 100%;
+	height: 9%;
+	transform: rotateX(0deg) translateY(-120px) translateZ(0px);
+}
+
+.texture {
+	height: 50%;
+	border: 5px solid #2c2729;
+	background-image: url("../img/ridges.png");
+	background-size: cover;
+}
+
+.logo {
+	display: inline-block;
+	margin: 30px;
+	padding: 2px 6px;
+	border: 1px solid black;
+	background-color: lightgray;
+}
+
+.cassette {
+	height: 35%;
+	border: 10px solid #2c2729;
+	position: relative;
+	background-color: #3a3637;
+}
+
+.cassette::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left:  0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(44, 39, 41, .6);
+	z-index: 5;
+}
+
+.tape {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.tape img {
+	position: relative;
+	z-index: 2;
+	width: 85%;
+	margin: 10px;
+	box-shadow: rgba(22, 22, 22, 0.6) -1px 6px 9px 12px;
+}
+
+.tape span {
+	position: absolute;
+	z-index: 1;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-image: url("../img/gear.png");
+	background-size: contain;
+	animation: rotating 3s linear infinite;
+	animation-play-state: paused;
+}
+
+.roll {
+	position: absolute;
+	border-radius: 50%;
+	background-color: black;
+	z-index: 0;
+}
+
+#been-played {
+	width: 80px;
+	height: 80px;
+	top: 47%;
+	left: 32%;
+	transform: translate(-50%, -50%);
+}
+
+#to-be-played {
+	width: 120px;
+	height: 120px;
+	top: 47%;
+	right: 32%;
+	transform: translate(50%, -50%);
+}
+
+#left-gear {
+	top: 39%;
+	left: 28%;
+}
+
+#right-gear {
+	top: 39%;
+	right: 27%;
+}
+
+.dashboard {
+	height: 15%;
+	padding: 10px;
+	position: relative;
+}
+
+.info {
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.labels {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: -12px;
+	bottom: -10px;
+	margin: 0 4px;
+}
+
+.labels span {
+	font-size: 13px;
+	text-align: center;
+	color: #2c2729;
+	width: 68px;
+	margin: 2.5px;
+}
+
+#extrude {
+	position: absolute;
+	left: 20px;
+	bottom: 57px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: gray;
+	box-shadow: rgba(163, 163, 163, 0.75) 0px 8px 0px 3px,
+							rgba(38, 38, 38, 0.75) 0px 9px 0px 4px;
+}
+
+#volume-slider {
+	position: absolute;
+	left: 18px;
+	bottom: 56px;
+	cursor: pointer;
+}
+
+#volume-label {
+	font-size: 14px;
+	position: absolute;
+	left: 13px;
+	bottom: 26px;
+}
+
+#volume-label p {
+	font-size: 10px;
+	display: inline;
+}
+
+#toggle {
+	position: absolute;
+	right: 0;
+	top: 4px;
+	cursor: pointer;
+}
+
+.controls {
+	height: 100%;
+	border: 5px solid #d4d8de;
+	border-radius: 5px;
+	background-color: gray;
+	padding: 2px 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	perspective: 600px;
+	overflow: visible;
+}
+
+.controls button {
+	width: 68px;
+	border: 0;
+	border-radius: 2px;
+	margin: 4px;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 1rem;
+	color: rgba(0, 0, 0, .35);
+	background-color: #d9c7a0;
+	box-shadow: #d4be8d 0px 3px 0px 2px,
+							rgba(60, 60, 60, 0.7) 0px 10px 3px 0px;
+	transform: rotateX(20deg) scale(1.05) translate(0, -5px);
+	transform-origin: top center;
+	transition: background-color .5s, transform .5s;
+}
+
+.controls button:hover {
+	background-color: #d4be8d;
+	transform: rotateX(2deg) scale(1.04) translate(0, -5px);
+}
+
+#record {
+	background-color: #cf4d3c;
+	box-shadow: #c74130 0px 3px 0px 2px,
+							rgba(60, 60, 60, 0.7) 0px 10px 3px 0px;
+}
+
+#record:hover {
+	background-color: #c74130;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cassette Player</title>
+  <meta name="description" content="Page description">
+  <link rel="icon" href="favicon.ico">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <main>
+
+    <span id="shadow"></span>
+    
+    <div class="player-container">
+
+      <audio src="audio/mannequin.wav" type="audio/wav"></audio>
+
+      <div class="top">
+
+        <div class="texture">
+          <span class="logo">e&#x1F5F2;e</span>
+        </div>
+  
+        <div class="cassette">
+          <div class="tape">
+            <img src="img/cassette_mannequin.png" alt="Cassette Tape">
+            <span id="left-gear"></span>
+            <span id="right-gear"></span>
+            <div class="roll" id="been-played"></div>
+            <div class="roll" id="to-be-played"></div>
+          </div>
+        </div>
+  
+        <div class="dashboard">
+          <div class="info">moss rock</div>
+          <span id="extrude"></span>
+          <input type="range" id="volume-slider" max="100" value="50" class="input-knob" data-diameter="48" data-bgcolor="#d4d8de" data-fgcolor="#3a3637" />
+          <span id="volume-label">-&emsp;<p>VOL</p>&emsp;+</span>
+          <input type="checkbox" id="toggle" class="input-switch" data-diameter="20" data-fgcolor="#9a9c9c" />
+          <div class="labels">
+            <span>&#x23CF;</span>
+            <span>&#x23EA;&#xfe0e;</span>
+            <span>&#x23F9;</span>
+            <span>&#9658;</span>
+            <span>&#x23E9;&#xfe0e;</span>
+            <span>&#x23FA;</span>
+          </div>
+        </div>
+
+      </div> 
+      
+      <div class="front">
+        
+        <div class="controls">
+          <button id="eject"></button>
+          <button id="rewind" onclick="audio_rewind()"></button>
+          <button id="stop" onclick="audio_stop()"></button>
+          <button id="play" onclick="audio_play()"></button>
+          <button id="forward" onclick="audio_forward()"></button>
+          <button id="record"></button>
+        </div>
+
+      </div>
+  
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/player.js"></script>
+  <script src="js/input-knobs.js"></script>
+</body>
+</html>
