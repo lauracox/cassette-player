@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 *,
 *::before,
@@ -187,6 +188,7 @@ main {
 }
 
 .labels span {
+	font-family: 'Noto Sans', sans-serif;
 	font-size: 13px;
 	text-align: center;
 	color: #2c2729;
